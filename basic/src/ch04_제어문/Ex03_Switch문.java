@@ -66,8 +66,8 @@ public class Ex03_Switch문 {
 			default:
 				System.out.println("외근을 나갑니다.");
 		}
-
-		// 두 개 이상의 case에 같은 실행문 적용
+		
+		// 두 개이상의 case를 같은 실행문을 적용
 		char grade = 'B';
 		
 		switch(grade) {
@@ -83,8 +83,10 @@ public class Ex03_Switch문 {
 				System.out.println("손님입니다.");
 		}
 		
-		// Java12 이후
-		// switch문에서 표현식 사용가능 -> break 대신 화살표(->)와 {} 사용
+		
+		// Java 12 이후
+		// switch 문에서 표현식(expressions)을 사용할 수 있다.
+		// -> break 대신 화살표(->)와 중괄호({}) 사용! 
 		switch(grade) {
 			case 'A', 'a' -> {
 				System.out.println("우수 회원입니다.");
@@ -96,7 +98,8 @@ public class Ex03_Switch문 {
 				System.out.println("손님입니다.");
 			}
 		}
-		// 실행문이 하나면 {}생략가능
+
+		// 실행문이 하나이면 중괄호 생략 가능!
 		switch(grade) {
 			case 'A', 'a' -> System.out.println("우수 회원입니다.");
 			case 'B', 'b' -> System.out.println("일반 회원입니다.");						
@@ -104,7 +107,7 @@ public class Ex03_Switch문 {
 		}
 		
 		
-		// String grade = "B";
+		//String grade = "B";
 		
 		//Java 11 이전 문법
 		int score1 = 0;
@@ -122,10 +125,11 @@ public class Ex03_Switch문 {
 		System.out.println("score1: " + score1);
 		
 		//Java 12부터 가능
-		// switch문 결과를 변수에 할당
-		// switch expressions을 사용하면 switch된 값을 대입할수있음
-		// - 단일값일 경우에는 화살표 오른쪽에 값 쓰고, {}사용할 경우에는 yield 키워드로 값 지정
-		// - 단, 이 경우에는 default가 반드시 존재해야됨
+		// switch 결과를 변수에 대입
+		// switch expressions을 사용하면 switch된 값을 변수에 대입할 수 있다.
+		//  - 단일 값일 경우에는 화살표 오른쪽에 값을 기술하고,
+		//  - 중괄호를 사용할 경우에는 yeild 키워드로 값을 지정한다.
+		//  - 단, 이 경우에는 default가 반드시 존재해야 한다.
 		int score2 = switch(grade) {
 			case 'A' -> 100;
 			case 'B' -> {
@@ -136,5 +140,7 @@ public class Ex03_Switch문 {
 			default -> 60;
 		};
 		System.out.println("score2: " + score2);
+
 	}
+
 }
