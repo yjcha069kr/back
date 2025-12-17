@@ -3,8 +3,8 @@ package ch04_제어문;
 import java.util.Scanner;
 
 /**
- * for 문과 while 문은 조건이 false이면 한번도 실행x
- *  
+ * for 문과 while 문은 조건이 false이면 한 번도 실행x
+ * do~while 문은 조건이 false라도 최소한 1번은 실행된다.
  */
 public class Ex08_DoWhile문 {
 
