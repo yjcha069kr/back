@@ -1,15 +1,17 @@
 package ch06_클래스.ex02_필드와생성자;
 
+import javax.lang.model.element.NestingKind;
+
 /**
  * 클래스의 구성 요소
- *	1. 필드(변수) <- 속성(특징_
- *	2. 생성자
- *	3. 매서드
- *
- *
+ * 	1. 필드(변수) <- 속성(특징)
+ * 	2. 생성자
+ *  3. 메서드
+ *  
+ * 
  * 07.필드 선언과 사용
  * 	1. 필드(Field)? 객체의 데이터를 저장하는 역할을 한다.
- *  2. 필드는 반드시 클래스 블록에서 선언되어야 한다.
+ *  2. 필드는 반드시 클래스 블록{}에서 선언되어야 한다.
  * 
  * 필드 선언
  * 		타입 필드명 [=초깃값];
@@ -22,7 +24,7 @@ package ch06_클래스.ex02_필드와생성자;
  *  - 객체 초기화란 필드를 초기화하거나 메서드를 호출해서 객체 사용 준비를 하는 것을 말한다.
  *  - 클래스가 public class로 선언되면 기본 생성자도 public이 붙고,
  *    클래스가 public 없이 선언되면 기본 생성자도 public이 붙지 않는다.
- *  - 클래스에 생성자 선언이 없으면 컴파일러는 기본 생성자(Default Constructor)를
+ *  - 클래스에 생성자 선언이 없으면 실행시 컴파일러는 기본 생성자(Default Constructor)를
  *    바이트코드 파일(*.class)에 자동으로 추가시킨다.
  *  - 명시적으로 선언한 생성자가 있다면, 컴파일러는 기본 생성자를 추가하지 않는다.
  *  - 생성자를 선언하는 이유? 객체를 다양하게 초기화하기 위해서
@@ -41,21 +43,47 @@ package ch06_클래스.ex02_필드와생성자;
  *
  */
 public class Car {
-	// 필드는 반드시 클래스 블록{}에서 선언되어야 함
-	// 변수 선언 및 할당
-	String company = "현대자동차";
+
+	// 필드는 반드시 클래스 블록{}에서 선언되어야 한다.
+	// 필드(변수) 선언 및 할당
+	String student = "현대자동차";
 	String model = "그랜저";
 	String color = "검정";
+	// 카멜 표기법
 	int maxSpeed = 350;
 	// 선언만
 	int speed;
+
 	
 	// 생성자
+	// 생성자를 선언하는 이유? 객체를 다양하게 초기화하기 위해서
 	// 생성자는 리턴 타입이 없고, 클래스 이름과 동일해야 한다.
-	// 	[public] 클래스(){}
-	Car(){}
-	// 	클래스(매개변수, ...) { //객체 초기화 코드 }
-	Car(String model, String color){}
-	Car(String model, String color, int maxSpeed){}
+
+	// alt+shift+s,o: 생성자 대화상자
+
+	// 기본 생성자
+	// [public] 클래스(){}
+	Car() {
+	}
+
+	// [public] 클래스(매개변수, ...) { //객체 초기화 코드 }
+	Car(String model) {
+		// 필드를 초기화
+		// this? 클래스 자기 자신
+		// this.필드 = 매개변수
+		this.model = model;
+	}
+
+	Car(String model, String color) {
+		this.model = model;
+		this.color = color;
+	}
+	
+	Car(String model, String color, int maxSpeed) {
+		this.model = model;
+		this.color = color;
+		this.maxSpeed = maxSpeed;
+	}
+	
 
 }
