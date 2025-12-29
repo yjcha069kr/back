@@ -6,6 +6,7 @@ public class Student extends Person {
 
 	//생성자 선언
 	public Student(String name, int studentNo) {
+		// 부모 생성자 호출
 		super(name);
 		this.studentNo = studentNo;
 	}

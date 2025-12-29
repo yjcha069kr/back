@@ -23,13 +23,13 @@ public class ChildExample {
 		parent.field1 = "data1";
 		// field2 cannot be resolved or is not a field
 		// field2는 자식 필드
-		// parent.field2 = "data2"; //불가능.에러
+		// parent.field2 = "data2"; 에러
 
-		//메서드 호출
+		//메소드 호출
 		parent.method1();
 		parent.method2();
 		// The method method3() is undefined for the type Parent
-		// parent.method3(); // (호출 불가능)
+		//parent.method3(); // (호출 불가능)
 		
 		// 강제 타입 변환
 		// 자식타입 변수 = (자식타입) 부모타입객체;

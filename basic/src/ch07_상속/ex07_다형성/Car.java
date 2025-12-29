@@ -15,9 +15,17 @@ package ch07_상속.ex07_다형성;
  */
 public class Car {
 	//필드 선언
+	// Tire 객체를 참조할 수 있는 변수
+	// Car는 Tire를 가지로 있다.(has-a 관계)
+	// Tire를 상위 타입으로 선언 -> 다양한 하위 객체 대입 가능 (다형성)
+	// 실제 객체는 new로 생성 후 대입
 	public Tire tire;
+	
+	// Duplicate field Car.tire
+//	Tire tire2 = new Tire();
 
 	//메소드 선언
+	// Car 클래스의 run() 메서드는 
 	public void run() {
 		//tire 필드에 대입된 객체의 roll() 메소드 호출
 		tire.roll();

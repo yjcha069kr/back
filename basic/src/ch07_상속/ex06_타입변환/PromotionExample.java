@@ -16,17 +16,17 @@ class E extends C {
 }
 
 /**
- * 타입 변환이란?
- *  - 차입을 다른 타입으로 변환하는 것
- * 	1. 자동 타입(형) 변환(up casting)
- * 	2. 강제 타입(형) 변환(down casting)
- * 
+ * 타입 변환?
+ * 	- 타입을 다른 타입으로 변환하는 것
+ *  1. 자동 타입(형) 변환(up casting)
+ *  2. 강제 타입(형) 변환(down casting)
+ *  
  * 클래스 타입 변환
- * 	- 상속 관계에 있는 클래스 사이에 발생
+ *  - 상속 관계에 있는 클래스 사이에 발생한다.
+ *  
+ *  	// 자동 타입 변환
+ *  	부모클래스타입 변수 = 자식클래스타입객체;
  * 
- *		// 자동 타입 변환
- * 		부모클래스타입 변수 = 자식클래스타입객체;
- *   
  */
 public class PromotionExample {
 	public static void main(String[] args) {
@@ -44,8 +44,9 @@ public class PromotionExample {
 		B b1 = d;
 		C c1 = e;
 		
-		// E는 C를 상속받고, D는 B를 상속받음
-//		 B b3 = e;
-//		 C c2 = d;
+		// Type mismatch: cannot convert from E to B
+		// E는 C를 상속 받고, D는 B를 상속 받음
+//		B b3 = e;
+//		C c2 = d;
 	}
 }
