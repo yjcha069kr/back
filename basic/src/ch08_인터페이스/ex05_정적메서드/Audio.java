@@ -1,24 +1,22 @@
 package ch08_인터페이스.ex05_정적메서드;
 
-import ch08.sec06.RemoteControl;
-
 public class Audio implements RemoteControl {
 	//필드
 	private int volume;
 
-	//turnOn() 추상 메소드 오버라이딩
+	//turnOn() 추상 메서드 오버라이딩
 	@Override
 	public void turnOn() {
 		System.out.println("Audio를 켭니다.");
 	}
 
-	//turnOff() 추상 메소드 오버라이딩
+	//turnOff() 추상 메서드 오버라이딩
 	@Override
 	public void turnOff() {
 		System.out.println("Audio를 끕니다.");
 	}
 
-	//setVolume() 추상 메소드 오버라이딩
+	//setVolume() 추상 메서드 오버라이딩
 	@Override
 	public void setVolume(int volume) {
 		if(volume>RemoteControl.MAX_VOLUME) {
@@ -34,7 +32,8 @@ public class Audio implements RemoteControl {
 	//필드
 	private int memoryVolume;
 
-	//디폴트 메소드 재정의
+	// 디폴트 메서드 재정의
+	// 재정의 시 default는 생략하고, public을 붙인다. 
 	@Override
 	public void setMute(boolean mute) {
 		if(mute) {

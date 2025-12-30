@@ -32,7 +32,7 @@ public class Audio implements RemoteControl {
 	//필드
 	private int memoryVolume;
 
-	//디폴트 메소드 재정의
+	//디폴트 메서드 재정의
 	@Override
 	public void setMute(boolean mute) {
 		if(mute) {

@@ -1,7 +1,5 @@
 package ch08_인터페이스.ex05_정적메서드;
 
-import ch08.sec06.RemoteControl;
-
 public class Television implements RemoteControl {
 	//필드
 	private int volume;

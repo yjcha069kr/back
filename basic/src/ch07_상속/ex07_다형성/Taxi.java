@@ -1,12 +1,9 @@
 package ch07_상속.ex07_다형성;
 
-public class Taxi {
-	
-	// 기본 생성자
-	//Tire(){}
-	
-	//메소드 선언
-	public void roll() {
-		System.out.println("회전합니다.");
+public class Taxi extends Vehicle {
+	//메소드 재정의(오버라이딩)
+	@Override
+	public void run() {
+		System.out.println("택시가 달립니다.");
 	}
 }

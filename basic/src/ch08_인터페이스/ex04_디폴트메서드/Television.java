@@ -1,7 +1,5 @@
 package ch08_인터페이스.ex04_디폴트메서드;
 
-import ch08.sec05.RemoteControl;
-
 public class Television implements RemoteControl {
 	//필드
 	private int volume;
