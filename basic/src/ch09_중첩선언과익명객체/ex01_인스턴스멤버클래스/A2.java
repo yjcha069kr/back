@@ -1,4 +1,4 @@
-package ch09_중첩.ex01_인스턴스멤버클래스;
+package ch09_중첩선언과익명객체.ex01_인스턴스멤버클래스;
 
 public class A2 {
 	//인스턴스 멤버 클래스
@@ -14,25 +14,25 @@ public class A2 {
 			System.out.println("B-생성자 실행");
 		}
 
-		//인스턴스 메소드
+		//인스턴스 메서드
 		void method1() {
 			System.out.println("B-method1 실행");
 		}
 
-		//정적 메소드(Java 17부터 허용)
+		//정적 메서드(Java 17부터 허용)
 		static void method2() {
 			System.out.println("B-method2 실행");
 		}
 	}
 
-	//인스턴스 메소드
+	//인스턴스 메서드
 	void useB() {
-		//B 객체 생성 및 인스턴스 필드 및 메소드 사용
+		//B 객체 생성 및 인스턴스 필드 및 메서드 사용
 		B b = new B();
 		System.out.println(b.field1);
 		b.method1();
 
-		//B 클래스의 정적 필드 및 메소드 사용
+		//B 클래스의 정적 필드 및 메서드 사용
 		System.out.println(B.field2);
 		B.method2();
 	}

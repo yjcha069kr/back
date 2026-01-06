@@ -6,6 +6,7 @@ public class ExtendsExample {
 
 		InterfaceA ia = impl;
 		ia.methodA();
+		// The method methodB() is undefined for the type InterfaceA
 		//ia.methodB();
 		System.out.println();
 
