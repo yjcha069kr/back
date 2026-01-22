@@ -1,5 +1,9 @@
 package ch11_base모듈.sec09_Annotation;
 
+/**
+ * @애노테이션명(이름="값", ...);
+ *	- 기본값이 있으면 ()안의 값은 생략 가능
+ */
 public class Service {
 	@PrintAnnotation
 	public void method1() {

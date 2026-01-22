@@ -1,5 +1,4 @@
 package ch12_제네릭.ex01_제네릭이란;
-
 /**
  * 제네릭(Generic)?
  * 	- 결정되지 않은 타입을 파라미터로 처리하고,
@@ -14,6 +13,28 @@ package ch12_제네릭.ex01_제네릭이란;
  *    	public interface 인터페이스<A, B, ...> {...}
  *    
  */
+
+// <T>는 T가 타입 파라미터임을 뜻하는 기호로,
+// content 필드의 타입으로 사용하였다.
 public class Box<T> {
 	public T content;
+}
+
+// Box<T> box = new Box<T>
+// Box<T> box = new Box<>
+
+//public class Box<String> {
+//	public String content;
+//}
+//public class Box<Integer> {
+//	public int content;
+//}
+
+// Box3 box = new Box3
+
+class Box3 {
+	public String content;
+}
+class Box4 {
+	public int content;
 }

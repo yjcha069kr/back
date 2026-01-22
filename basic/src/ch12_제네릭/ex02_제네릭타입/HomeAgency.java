@@ -6,3 +6,10 @@ public class HomeAgency implements Rentable<Home> {
 		return new Home();
 	}
 }
+
+class HomeAgency2 implements Rentable2 {
+	@Override
+	public Home rent() {
+		return new Home();
+	}
+}

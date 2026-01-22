@@ -1,5 +1,4 @@
 package ch12_제네릭.ex03_제네릭메서드;
-
 /**
  * 제네릭 메서드
  *  - 타입 파라미터를 가지고 있는 메서드
@@ -12,7 +11,7 @@ package ch12_제네릭.ex03_제네릭메서드;
 public class GenericExample {
 	//제네릭 메소드
 	public static <T> Box<T> boxing(T t) {
-		Box<T> box = new Box<T>();
+		Box<T> box = new Box<>();
 		box.set(t);
 		return box;
 	}

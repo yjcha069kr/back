@@ -13,7 +13,8 @@ package ch12_제네릭.ex02_제네릭타입;
  *    	public interface 인터페이스<A, B, ...> {...}
  *    
  */
-//제네릭 타입
+
+// 타입 파라미터로 K와 M 정의
 public class Product<K, M> {
 	//필드
 	private K kind;

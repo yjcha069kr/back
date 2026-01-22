@@ -2,15 +2,17 @@ package ch12_제네릭.ex02_제네릭타입;
 
 public class GenericExample3 {
 	public static void main(String[] args) {
-		Box3 box1 = new Box3();
+		Box box1 = new Box();
 		box1.content = "100";
 
-		Box3 box2 = new Box3();
+		Box box2 = new Box();
 		box2.content = "100";
 		
-		Box3 box3 = new Box3();
+		Box box3 = new Box();
 		box3.content = 100;
 
+		// Box의 내용 비교
+		// -> String 에서 재정의된 equals() 사용!
 		boolean result1 = box1.compare(box2);
 		System.out.println("result1: " + result1);
 
