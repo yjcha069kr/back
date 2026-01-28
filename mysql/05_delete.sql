@@ -50,12 +50,61 @@ WHERE regdate < '2022-01-01';
 
 
 -- 8. 카테고리가 NULL인 상품을 삭제하시오.
--- 9. 제목에 '테스트'가 포함된 게시글을 삭제하시오.
--- 10. 평균 주문 금액보다 작은 주문을 삭제하시오.
--- 11. 게시글을 2개 이상 작성한 작성자의 게시글을 삭제하시오.
--- 12. 등급이 BRONZE인 회원의 주문을 삭제하시오.
--- 13. 주문 상태가 '취소'인 주문을 삭제하시오.
--- 14. board 테이블의 모든 데이터를 삭제하시오.
--- 15. 같은 제목의 게시글이 여러 개일 경우, 가장 최근 글을 제외하고 삭제하시오.
+DELETE FROM product
+WHERE category IS NULL;
+SELECT * FROM product;
+-- 9. 게시판(board) 테이블의 제목(title)에 '테스트'가 포함된 게시글을 삭제하시오.
+DELETE FROM board
+WHERE title LIKE '%테스트%';
+SELECT * FROM board;
+-- 10. 주문(orders) 테이블의 평균 주문 금액(total_price)보다 작은 주문을 삭제하시오.
+DELETE FROM orders
+WHERE total_price < (SELECT avg_price FROM (SELECT AVG(total_price) AS avg_price FROM orders) AS temp);
+
+DELETE FROM orders
+WHERE total_price < 117500;
+
+SELECT AVG(total_price) AS avg_price FROM orders; -- 117500.0000
+SELECT * FROM orders;
+
+-- 11. 게시판(board) 테이블에서 게시글을 2개 이상 작성한 작성자의 게시글을 삭제하시오.       <<<-==================================
+DELETE FROM board
+WHERE writer IN (
+    (SELECT writer 
+    FROM (SELECT writer
+        FROM board
+        GROUP BY writer
+        HAVING count(*) >= 2
+    ) AS temp_writers)
+);
+SELECT writer FROM board;
+
+SELECT FROM board;
+
+-- INSERT INTO 테이블명 [(필드1, ...)] VALUES (값1, ...), (값1, ...), ...;
+INSERT INTO board (title, writer, view_cnt, regdate) VALUES ("자유글3", 'hong', 10, '2026-01-28');
+
+-- 12. 등급이 BRONZE인 회원의 주문을 삭제하시오.  <<<-==================================
+DELETE FROM orders;
+SELECT * FROM member;
+
+INSERT INTO orders VALUES
+(1,1,120000,'주문완료','2025-01-01'),
+(2,2,50000,'취소','2023-01-01'),
+(3,3,0,'취소','2024-01-01'),
+(5,5,300000,'주문완료','2025-02-01');
+
+-- 13. 주문 테이블(orders)에서 주문 상태가 '취소'인 주문을 삭제하시오.   <<<-==================================
+DELETE FROM orders
+WHERE status = '주문완료';
+-- 14. board 테이블의 모든 데이터를 삭제하시오.   <<<-==================================
+
+
+-- 15. 같은 제목의 게시글이 여러 개일 경우, 가장 최근 글을 제외하고 삭제하시오.     <<<-==================================
+INSERT INTO board VALUES
+(1,'테스트 글','hong',0,'2022-01-01'),
+(2,'공지사항','admin',200,'2023-01-01'),
+(3,'공지사항','hong',10,'2025-01-01'),
+(4,'테스트 게시글','kim',5,'2021-01-01');
 
 select * FROM member;
